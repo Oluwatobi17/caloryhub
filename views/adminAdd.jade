@@ -1,0 +1,32 @@
+extends layout2
+
+block content
+	.text-center
+		h3 Admin
+		form.form-signin(action='/posts/add',method='post', enctype='multipart/form-data')
+			a(href='/')
+				img.nav-img(src='/images/calory.jpg')
+			h1.h3.mb-3.font-weight-normal Please add post
+
+			label.sr-only(for='inputEmail') Author
+			input#inputEmail.form-control(type='hidden',value='Admin', name='author', required='')
+			br
+
+			label.sr-only(for='inputEmail') Title
+			input#inputEmail.form-control(type='text', name='title',placeholder='Post title', required='', autofocus='')
+			br
+
+			label.sr-only(for='inputPassword') Body
+			textarea#inputPassword.form-control(name='body', placeholder='Post body', required='')
+			br
+
+			select.form-control.form-control-lg(name='category')
+				each cat, i in categories
+					option #{cat.title}
+			br
+
+			label.sr-only(for='inputEmail') Post Image
+			input#inputEmail.form-control(type='file',name='image', placeholder='image')
+			br
+
+			button.btn.btn-lg.btn-primary.btn-block(type='submit') Add Post

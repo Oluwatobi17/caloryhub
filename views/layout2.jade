@@ -1,0 +1,45 @@
+doctype html
+html(lang='en')
+	head
+		title=title
+		link(href='/stylesheets/style.css', rel='stylesheet')
+		link(href='/stylesheets/bootstrap.css', rel='stylesheet')
+		link(href='/stylesheets/bootstrap.min.css', rel='stylesheet')
+
+		meta(name='keywords', content='calory, hub,caloryhub')
+		meta(name='description', content='HTML, Meta Tags, Metadata')
+
+		nav.navbar.navbar-expand-sm.navbar-dark.bg-dark
+			.container
+				a(href='/')
+					img.nav-img(src='/images/calory.jpg')
+				button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarsExample03', aria-controls='navbarsExample03', aria-expanded='false', aria-label='Toggle navigation')
+					span.navbar-toggler-icon
+				#navbarsExample03.collapse.navbar-collapse
+					ul.navbar-nav.mr-auto
+						li.nav-item.active
+							a.nav-link(href='/admin')
+								| Users 
+								span.sr-only (current)
+						li.nav-item.active
+							a.nav-link(href='/admin/posts') Posts
+						li.nav-item.active
+							a.nav-link(href='/admin/categories') Categories
+				if confirm=='admin'
+					a.nav-link.space(href='/admin/logout') Logout
+				a.nav-link.space(href='/') Main Blog
+			
+
+	body
+		!= messages()
+		if errors
+			ul
+				each error, i in errors
+					li.error #{error.msg}
+
+		block content
+
+		script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js', integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN', crossorigin='anonymous')
+
+		script(src='/javascripts/bootstrap.min.js')
+

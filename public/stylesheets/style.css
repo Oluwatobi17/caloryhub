@@ -1,0 +1,142 @@
+.slide1{
+	width: 100%;
+	height: 350px;
+	margin-bottom: 50px;
+}
+body{
+	margin: 20px 150px;
+
+}
+footer{
+	text-align: center;  
+	background-color: #ccc;
+}
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .checkbox {
+  font-weight: 400;
+}
+.form-signin .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.nav-img{
+  width: 35px;
+  height: 35px;
+  margin: 8px 10px;
+  border-radius: 3px;
+}
+.post-img{
+  border-radius: 8px;
+}
+.block-img{
+  width: 200px;
+  height: 250px;
+}
+.container2{
+  height: 100px;
+}
+.links{
+  margin: 5px;
+}
+.com-link,.lik-link{
+  color: gold;
+  margin: 7px;
+}
+.main-body{
+  width: 850px;
+  margin: 20px 50px;
+}
+.carrier{
+  width: 400px;
+  margin: 20px 10px;
+  float: left;
+}
+.comments{
+  margin: 10px 10px;
+  background-color: #ccc;
+}
+.success{
+  border: 1px solid transparent;
+  margin: 10px 10px;
+  padding: 20px 20px;
+  background-color: #dff0d8;
+  border-color: #d6e96e;
+  list-style: none;
+}
+.error{
+  border: 1px solid transparent;
+  margin: 10px 10px;
+  padding: 20px 20px;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+  list-style: none;
+}
+.space{
+  margin-left: 5px;
+  margin-right: 5px;
+  color: white;
+}
+.provider{
+  background-image: url('/images/imager.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.adminprovider{
+  background-image: url('/images/imager4.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.registration{
+  background-image: url('/images/war.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.like{
+  width: 18px;
+  height: 18px;
+}
+.like1{
+  margin: 10px 0px;
+  width: 18px;
+  height: 18px;
+}
+.sorry{
+  width: 200px;
+  height: 200px;
+}
+.cat{
+  background-image: url('/images/deer.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;  
+}
+.addpost{
+  background-image: url('/images/imager3.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;  
+}

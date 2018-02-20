@@ -1,0 +1,19 @@
+extends layout2
+
+block content
+	.main-body
+		h3 Blog Categories
+		table.table.table-striped.table-dark
+			thead
+				tr
+					th(scope='col') _id
+					th(scope='col') Title
+					th(scope='col')
+				each category,i in categories
+					tbody
+						tr
+							th(scope='row') #{category._id}
+							td #{category.title}
+							td
+								a(href='/admin/#{category._id}/deleteCategory') Delete
+		a(href='/admin/addcategory') Add Category

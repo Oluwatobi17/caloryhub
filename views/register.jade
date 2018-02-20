@@ -1,0 +1,31 @@
+extends layout
+
+block content
+	.registration
+		.text-center
+			form.form-signin(action='/users/register',method='post')
+				a(href='/')
+					img.nav-img(src='/images/calory.jpg')
+				h1.h3.mb-3.font-weight-normal Sign up
+
+				label.sr-only(for='inputEmail') Name
+				input#inputEmail.form-control(type='text',name='name' ,placeholder='Last and First name', required='', autofocus='')
+				br
+
+				label.sr-only(for='inputPassword') Email
+				input#inputPassword.form-control(type='email',name='email', placeholder='email', required='')
+				br
+
+				label.sr-only(for='inputEmail') Username
+				input#inputEmail.form-control(type='text',name='username' ,placeholder='Username', required='', autofocus='')
+				br
+
+				label.sr-only(for='inputEmail') Password
+				input#inputEmail.form-control(type='password',name='password' ,placeholder='password', required='', autofocus='')
+				br
+
+				label.sr-only(for='inputEmail') Confirm Password
+				input#inputEmail.form-control(type='password',name='password2' ,placeholder='Confirm password', required='', autofocus='')
+				br
+
+				button.btn.btn-lg.btn-primary.btn-block(type='submit') Create account

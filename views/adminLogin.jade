@@ -1,0 +1,23 @@
+extends layout2
+
+block content
+	.adminprovider
+		.text-center
+			form.form-signin(action='/admin/login',method='post')
+				a(href='/')
+					img.nav-img(src='/images/calory.jpg')
+				h1.h3.mb-3.font-weight-normal Admin Login
+
+				label.sr-only(for='inputEmail') Username
+				input#inputEmail.form-control(type='text',name='username' ,placeholder='Username', required='', autofocus='')
+				br
+
+				label.sr-only(for='inputPassword') Password
+				input#inputPassword.form-control(type='password',name='password',placeholder='password', required='')
+				br
+
+				.checkbox.mb-3
+					label
+						input(type='checkbox', value='remember-me')
+						|  Remember me
+				button.btn.btn-lg.btn-primary.btn-block(type='submit') Sign in

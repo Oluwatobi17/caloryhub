@@ -1,0 +1,14 @@
+extends layout2
+
+block content
+	.text-center
+		h3 Admin
+		form.form-signin(action='/admin/addcategory',method='post')
+			a(href='/')
+				img.nav-img(src='/images/calory.jpg')
+			h1.h3.mb-3.font-weight-normal Add new category
+			label.sr-only(for='inputEmail') Title
+			input#inputEmail.form-control(type='text',name='title', placeholder='Category title', required='', autofocus='')
+			br
+		
+			button.btn.btn-lg.btn-primary.btn-block(type='submit') Add Category

@@ -1,0 +1,24 @@
+extends layout2
+
+block content
+	.main-body
+		h3 Blog Posts
+		table.table.table-striped.table-dark
+			thead
+				tr
+					th(scope='col') _id
+					th(scope='col') Author
+					th(scope='col') Title
+					th(scope='col') Category
+					th(scope='col')
+				each post,i in posts
+					tbody
+						tr
+							th(scope='row') #{post._id}
+							td #{post.author}
+							td #{post.title}
+							td #{post.category}
+							td
+								a(href='/admin/#{post._id}/deletePost') Delete
+		a(href='/admin/addpost') Add Post
+//.lik-link

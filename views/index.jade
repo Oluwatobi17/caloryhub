@@ -1,0 +1,56 @@
+extends layout
+
+block content
+
+	main(role='main')
+		.carousel-inner
+			img.slide1#rider(src='/images/caloryShoes.jpg', alt='Image not found',onclick='slide()')
+			.container
+				.carousel-caption.text-left
+					p
+						a.btn.btn-lg.btn-primary(href='/users/register', role='button') Sign up today
+
+		.container.marketing
+			h1 Recent Posts
+			if posts
+				each post,i in posts
+					if i%2==0
+						// START THE FEATURETTES
+						hr.featurette-divider
+						.row.featurette
+							.col-md-7
+								h2.featurette-heading
+									| #{post.title}
+								p.lead
+									| #{post.body}.
+
+							.col-md-5
+								img.featurette-image.img-fluid.mx-auto(src='/images/uploads/#{post.image}', alt='Generic placeholder image')
+								br
+								br
+								a.btn.btn-secondary(href="/posts/#{post._id}/addcomment/", role="button") View details &raquo
+							.links #{post.comments.length} Comments
+							.links - Posted on #{moment(post.date).format('h:mm:ss a-DD, ddd MMM YYYY')} by #{post.author} - 
+							a.lik-link(href="/categories/#{post.category}", role="button") #{post.category}
+							a.com-link(href="/posts/#{post._id}/addcomment/", role="button") Comment
+							
+								
+					else
+						hr.featurette-divider
+						.row.featurette
+							.col-md-7.order-md-2
+								h2.featurette-heading #{post.title}
+									p.lead #{post.body}.
+							.col-md-5.order-md-1
+								img.featurette-image.img-fluid.mx-auto(src='/images/uploads/#{post.image}', alt='Generic placeholder image')
+								br
+								br
+								a.btn.btn-secondary(href="/posts/#{post._id}/addcomment/", role="button") View details &raquo
+						a.links #{post.comments.length} Comments
+						a.links - Posted on #{moment(post.date).format('h:mm:ss a-DD, ddd MMM YYYY')} by #{post.author} - 
+						a.lik-link(href="/categories/#{post.category}", role="button") #{post.category}
+						a.com-link(href="/posts/#{post._id}/addcomment/", role="button") Comment
+			if posts==''
+				.container
+					img.sorry(src='/images/sorry.jpg')
+					h3 Oops!!! Sorry no post for now. Please create one!!!	

@@ -1,0 +1,8 @@
+extends layout
+
+block content
+	.container
+		img.sorry(src='/images/sorry.jpg')
+		h1 #{error.status} #{message}
+		h3 Sorry the page you requested for is not available please check your url.
+		//pre #{error.stack}

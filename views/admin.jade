@@ -1,0 +1,22 @@
+extends layout2
+
+block content
+	.main-body
+		h3 Blog Users
+		table.table.table-striped.table-dark
+			thead
+				tr
+					th(scope='col') _id
+					th(scope='col') Name
+					th(scope='col') Username
+					th(scope='col') email
+					th(scope='col')
+				each user,i in users
+					tbody
+						tr
+							th(scope='row') #{user._id}
+							td #{user.name}
+							td #{user.username}
+							td #{user.email}
+							td
+								a(href='/admin/#{user._id}/delete') Delete

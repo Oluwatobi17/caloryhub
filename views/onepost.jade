@@ -1,0 +1,37 @@
+extends layout
+
+block content
+	.main-body
+		each info,i in infos
+			img.slide1(src='/images/uploads/#{info.image}')
+			h3 #{info.title}
+			p #{info.body}
+			a.links #{info.comments.length} Comments
+			a.links - Posted on #{moment(info.date).format('h:mm:ss a-DD, ddd MMM YYYY')} by #{info.author} - 
+			a.lik-link(href="/categories/#{info.category}", role="button") #{info.category}
+
+			if info.comments.length
+				hr.featurette-divider
+				h3 Comments
+				each comment, i in info.comments
+					.comments
+						h5=comment.body
+						p=moment(comment.date).format('h:mm:ss a-DD, ddd MMM YYYY')
+						| #{comment.author}
+			else
+				h3 No comment presently
+
+			hr.featurette-divider
+			.pos
+				form.form-signin(action='/posts/#{info._id}/addcomment',method='post')
+					img.mb-4.post-img(src='/images/calory.jpg', alt='', width='72', height='72')
+					h1.h3.mb-3.font-weight-normal Comment
+					
+					label.sr-only(for='inputEmail') Author
+					input#inputEmail.form-control(type='hidden',value='#{user.username}', name='author', required='')
+
+					label.sr-only(for='inputPassword') Body
+					textarea#inputPassword.form-control(name='body', placeholder='Comment body', required='')
+					br
+
+					button.btn.btn-lg.btn-primary.btn-block(type='submit') Comment
