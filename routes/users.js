@@ -88,8 +88,7 @@ router.post('/register', function(req, res, next) {
 			name: name,
 			username: username,
 	  		email: email,
-	  		password: password,
-	  		profileimage: profileimage
+	  		password: password
 		});
 	  	
 	  	User.createUser(newUser, function(err, user){
